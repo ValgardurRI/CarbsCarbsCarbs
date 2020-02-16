@@ -68,13 +68,15 @@ async function fetchPage(page) {
 
 async function fetchProduct(prodname) {
   await fetchPage("ProductPage.html");
-  parseDrinks().then(drinkinfo => {
-    var productIngredientValues = drinkinfo[1].filter(drink => drink[0]==prodname)[0];
-    $(".carbonbreakdown").append(createCarbonBreakdown(drinkinfo[0], productIngredientValues));
-    $(".productpageimg").attr("src", "images/" + prodname + ".jpg");
-    $(".totalemission").html(calculateCarbon(drinkinfo[0], productIngredientValues) + " gCO<sub>2</sub>");
-    $(".producttitle").html(prodname);
+  var drinkinfo;
+  await parseDrinks().then(x => {
+    drinkinfo = x;
   });
+  var productIngredientValues = drinkinfo[1].filter(drink => drink[0]==prodname)[0];
+  $(".carbonbreakdown").append(createCarbonBreakdown(drinkinfo[0], productIngredientValues));
+  $(".productpageimg").attr("src", "images/" + prodname + ".jpg");
+  $(".totalemission").html(calculateCarbon(drinkinfo[0], productIngredientValues) + " gCO<sub>2</sub>");
+  $(".producttitle").html(prodname);
 }
 
 function fetchProductList() {
