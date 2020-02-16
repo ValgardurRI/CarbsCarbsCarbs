@@ -1,6 +1,7 @@
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
   document.getElementsByClassName("sidenav")[0].style.width = "25%";
+  document.getElementsByClassName("sidenav")[0].style.minWidth = "200px";
   document.getElementsByClassName("main")[0].style.marginLeft = "25%";
   document.getElementsByClassName("openbtn")[0].style.visibility = "hidden";
 }
@@ -8,6 +9,7 @@ function openNav() {
 /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
 function closeNav() {
   document.getElementsByClassName("sidenav")[0].style.width = "0";
+  document.getElementsByClassName("sidenav")[0].style.minWidth = "0px";
   document.getElementsByClassName("main")[0].style.marginLeft = "0";
   document.getElementsByClassName("openbtn")[0].style.visibility = "visible";
 }

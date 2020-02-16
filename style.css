@@ -16,6 +16,7 @@ body {
 .sidenav {
     height: 100%;
     width: 25%;
+    min-width: 200px;
     background-color: #ffffff;
     position: fixed;
     z-index: 1;
@@ -112,6 +113,7 @@ div.item {
 }
 
 .totalemission {
+    margin: auto;
     display: block;
 }
 
@@ -121,17 +123,27 @@ div.item {
 }
 
 
-div.infobox {
-    float:left;
-    width: 65%;
-    padding: 20px;
-    padding-left: 60px;
-    margin-left: 5%;
-    border: 1px;
-    border-style: solid;
-    text-align: left;
-    border-radius: 1%;
+
+.footprintcaption {
+    margin: auto;
+    display: block
 }
+
+.productpageimg {
+    width: 100%;
+}
+
+.br1 {
+    float: left;
+    width: 29%;
+}
+
+.br2 {
+    float: right;
+    font-size: 14px;
+    width: 70%;
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
