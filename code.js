@@ -67,9 +67,11 @@ async function fetchPage(page) {
 async function fetchProduct(prodname) {
   await fetchPage("ProductPage.html");
   parseDrinks().then(drinkinfo => {
-    $(".carbonbreakdown").append(createCarbonBreakdown(drinkinfo[0], drinkinfo[1].filter(drink => drink[0]==prodname)[0]));
+    var productIngredientValues = drinkinfo[1].filter(drink => drink[0]==prodname)[0];
+    $(".carbonbreakdown").append(createCarbonBreakdown(drinkinfo[0], productIngredientValues));
     $(".productpageimg").attr("src", "images/" + prodname + ".jpg");
-    $(".totalemission").html(calculateCarbon(prodname) + " gCO<sub>2</sub>");
+    $(".totalemission").html(calculateCarbon(drinkinfo[0], productIngredientValues) + " gCO<sub>2</sub>");
+    $(".producttitle").html(prodname);
   });
 }
 
@@ -135,18 +137,14 @@ function carbonPerTrip(ing,g){
           }
   }
 }
-function calculateCarbon(drink){
-  var i;
-  var j;
-  var t = 0;
-  for(i=0;i<drinks1.length;i++){
-          if(drink[i][0] == drink){
-                  for(j=0;j<drinks1[i].length;i++){
-                          if(drinks[i][j]>0){
-                                  t += carbonPerTrip(drinks0[j],drinks[i][j]);
-                          }
-                  }
-          }
+
+
+function calculateCarbon(ingredientNames, ingredientValues){
+  var total = 0;
+  for(var i=0;i<ingredientNames.length;i++){
+    if(ingredientValues[i] > 0)
+      total += carbonPerTrip(ingredientNames[i], ingredientValues[i]);
   }
-  return t;
+
+  return Math.round(total);
 }
