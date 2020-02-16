@@ -1,0 +1,163 @@
+
+@font-face {
+    font-family: aauxpro;
+    src: url(fonts/AauxPro-Medium-webfont.eot);
+    src: url(fonts/AauxPro-light-webfont.woff2) format("woff2"),
+    url(fonts/AauxPro-Medium-webfont.woff2) format("woff2");
+    font-weight: 700;
+    font-style: normal
+}
+
+body {
+    font-family: "aauxpro";
+    -webkit-font-smoothing: antialiased;
+}
+
+.sidenav {
+    height: 100%;
+    width: 25%;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    border-right: 3px;
+    border-right-style: solid;
+    border-right-color: #1e3f5a;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav .searchtitle {
+    width: 100%;
+    font-size: 40px;
+    text-decoration: none;
+    color: #002366;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.sidenav form .inputfield {
+    margin: auto;
+    margin-bottom: 5%;
+    width: 90%;
+    padding-bottom: 7%;
+    display: block;
+}
+
+.sidenav form .submitbutt {
+    width: 30%;
+    padding: 7%;
+    background-color: #002366;
+    border: none;
+    color: #818181;
+    text-decoration: none;
+    font-size: 25px;
+    margin: auto;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+img.moreinfo {
+    position:absolute;
+    width: 15%;
+    padding-bottom: 10%;
+    padding-left: 5%;
+    bottom:0;
+}
+
+img.olgerdin {
+    width: 10%;
+    padding-left: 90%;
+}
+
+.producttitle {
+    text-align: center;
+    font-size: 80px;
+    margin-top: 20px;
+}
+
+.main {
+    margin-left: 25%; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+div.footprintvalue {
+    margin: auto;
+    width: 10%;
+    padding: 40px;
+    border: 12px;
+    border-style: solid;
+    text-align: center;
+    border-radius: 10%;
+}
+
+img.productimg {
+    margin: auto;
+    text-align: center;
+    display: block;
+    max-height: 500px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    padding-bottom: 10px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    visibility: hidden;
+}
+
+#myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+  }
+  
+  #myTable tr {
+  
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+  
+    background-color: #f1f1f1;
+  }
